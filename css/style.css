@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+  --color-navy: #001f3f;
+  --color-navy-light: #003366;
+  --color-white: #ffffff;
+  --color-orange: #ff851b;
+  --color-gold: #ffdc00;
+  --color-gray: #f4f4f4;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--color-navy);
+  background-color: var(--color-white);
+  line-height: 1.6;
+}
+
+/* Background Patterns */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 31, 63, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 31, 63, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-dot {
+  background-image: radial-gradient(rgba(0, 31, 63, 0.1) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* FV Background with Engineering feel */
+.fv-bg {
+  background: 
+    linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.fv-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at 70% 30%, black, transparent 70%);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--color-orange);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-primary:hover {
+  background-color: #e67716;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-navy);
+  color: var(--color-navy);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-navy);
+  color: white;
+}
